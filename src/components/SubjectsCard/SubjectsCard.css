@@ -1,0 +1,34 @@
+.SubjectsCardContainer {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.SemesterName{
+    margin: 20px;
+}
+
+
+.SubjectsCard{
+    width: 60%;
+
+    padding: 20px;
+
+    background-color: aliceblue;
+    
+    border: solid;
+    border-radius: 20px;
+    border-color: blue;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.115);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
