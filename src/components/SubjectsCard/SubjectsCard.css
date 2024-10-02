@@ -1,5 +1,9 @@
 .SubjectsCardContainer {
+    width: 100%;
+    max-width: 35rem;
     height: 100vh;
+
+    margin: 25px;
 
     display: flex;
     flex-direction: column;
@@ -14,8 +18,7 @@
 
 
 .SubjectsCard{
-    width: 60%;
-
+    width: 100%;
     padding: 20px;
 
     background-color: aliceblue;

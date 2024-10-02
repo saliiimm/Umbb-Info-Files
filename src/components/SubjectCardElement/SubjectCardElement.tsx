@@ -1,5 +1,5 @@
 import "./SubjectCardElement.css"
-import SubjectInterface  from "../../data_models/SubjectInterface";
+import SubjectInterface  from "../../utils/data_models/SubjectInterface";
 
 const SubjectCardElement: React.FC<SubjectInterface> = ({ subject }) => {
     return (

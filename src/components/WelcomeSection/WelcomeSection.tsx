@@ -8,7 +8,7 @@ const WelcomeSection = () => {
   return (
     <section className="welcome-section">
       <h2>
-        Welcome to Umbb Info Files
+        Welcome to UMBB CS Files
         <img src={BlueShape} alt="blue shape" className="blue" />
         <img src={YellowShape} alt="yellow shape" className="yellow" />
       </h2>

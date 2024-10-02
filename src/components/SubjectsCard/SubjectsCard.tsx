@@ -1,6 +1,6 @@
 import './SubjectsCard.css';
 import { FC } from "react";
-import SemesterInterface from "../../data_models/SemesterInterface";
+import SemesterInterface from "../../utils/data_models/SemesterInterface";
 import SubjectCardElement from "../SubjectCardElement/SubjectCardElement";
 
 
