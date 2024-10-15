@@ -1,44 +1,21 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import SubjectsCard from "../../components/SubjectsCard/SubjectsCard";
 import "./SemesterSection.css";
-import Semester from "../../utils/data_models/Semester"; // Import the Semester class
-import Subject from "../../utils/data_models/Subject"; // Import the Subject class
-
-interface SemesterData {
-  semesterName: string; // Renamed to avoid conflict with the Semester class
-  subjects: {
-    name: string;
-    link: string;
-  }[];
-}
-
-interface Speciality {
-  speciality: string;
-  semesters: SemesterData[];
-}
-
-interface Year {
-  year: string; // Updated to match your JSON data
-  specialities: Speciality[];
-}
-
-interface SemesterSectionProps {
-  year: Year;
-}
+import Semester from "../../utils/data_models/Semester"; 
+import Subject from "../../utils/data_models/Subject"; 
+import { SemesterSectionProps, Speciality } from "../../utils/SemesterSection.types";
 
 const SemesterSection = ({ year }: SemesterSectionProps) => {
   const selectedYear = year;
 
   const [selectedSpecialityIndex, setSelectedSpecialityIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState("");
-
-  const semesters = selectedSpecialityIndex >= 0 ? selectedYear.specialities[selectedSpecialityIndex].semesters : [];
   const [index, setIndex] = useState(0);
 
-  // Create Semester instances from the data
+  const semesters = selectedSpecialityIndex >= 0 ? selectedYear.specialities[selectedSpecialityIndex].semesters : [];
   const semesterInstances = semesters.map(semesterData => {
     const subjects = semesterData.subjects.map(subjectData => 
-      new Subject(subjectData.name, subjectData.link) // Create instances of Subject
+      new Subject(subjectData.name, subjectData.link) 
     );
 
     return new Semester(semesterData.semesterName, subjects, selectedYear.year);
@@ -46,7 +23,6 @@ const SemesterSection = ({ year }: SemesterSectionProps) => {
 
   const handleNext = () => {
     if (index < semesterInstances.length - 1) {
-      // Move to the next semester if not at the last one
       setAnimationClass("animate-out");
       setTimeout(() => {
         setIndex((prevIndex) => prevIndex + 1);
@@ -57,14 +33,12 @@ const SemesterSection = ({ year }: SemesterSectionProps) => {
 
   const handlePrev = () => {
     if (index > 0) {
-      // Move to the previous semester if not at the first one
       setAnimationClass("animate-out");
       setTimeout(() => {
         setIndex((prevIndex) => prevIndex - 1);
         setAnimationClass("animate-in");
       }, 500);
     } else {
-      // If at the first semester and back is clicked, show last semester
       setAnimationClass("animate-out");
       setTimeout(() => {
         setIndex(semesterInstances.length - 1);
@@ -73,19 +47,25 @@ const SemesterSection = ({ year }: SemesterSectionProps) => {
     }
   };
 
+  const handleSpecialityChange = (specialityIndex: SetStateAction<number>) => {
+    setAnimationClass("animate-out");
+    setTimeout(() => {
+      setSelectedSpecialityIndex(specialityIndex);
+      setIndex(0); 
+      setAnimationClass("animate-in");
+    }, 500);
+  };
+
   return (
     <div className="semester-section">
-      <h1 className="year-title">{selectedYear.year}</h1> {/* Year Title */}
+      <h1 className="year-title">{selectedYear.year}</h1>
 
       <div className="speciality-selection">
         {selectedYear.specialities.map((speciality: Speciality, specialityIndex: number) => (
           <button
             key={speciality.speciality}
             className={`speciality-button ${selectedSpecialityIndex === specialityIndex ? 'selected' : ''}`}
-            onClick={() => {
-              setSelectedSpecialityIndex(specialityIndex);
-              setIndex(0); // Reset to the first semester when changing specialities
-            }}
+            onClick={() => handleSpecialityChange(specialityIndex)} 
           >
             {speciality.speciality}
           </button>
@@ -94,7 +74,7 @@ const SemesterSection = ({ year }: SemesterSectionProps) => {
 
       <div className="slider">
         <img
-          className={`iconimg ${index === 0 ? 'inactive' : ''}`} // Add inactive class if at first semester
+          className={`iconimg ${index === 0 ? 'inactive' : ''}`} 
           src="src/assets/prev.svg"
           onClick={handlePrev}
           alt="Previous"
@@ -105,7 +85,7 @@ const SemesterSection = ({ year }: SemesterSectionProps) => {
           )}
         </div>
         <img
-          className={`iconimg ${index === semesterInstances.length - 1 ? 'inactive' : ''}`} // Add inactive class if at last semester
+          className={`iconimg ${index === semesterInstances.length - 1 ? 'inactive' : ''}`} 
           src="src/assets/next.svg"
           onClick={handleNext}
           alt="Next"
