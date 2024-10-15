@@ -1,124 +1,382 @@
 {
-    "semesters": [
-      {
-        "semesterName": "Semestre1",
-        "year": "1 year",
-        "field": "LMD",
-        "subjects": [
-          {
-            "name": "Algorithme et structure de donnee 1",
-            "link": "https://drive.algo.ex"
-          },
-          {
-            "name": "Analyse",
-            "link": "https://drive.math.ex"
-          },
-          {
-            "name": "Algebre",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Structure de machine",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Physiqueee",
-            "link": "https://drive.physics.ex"
-          }, {
-            "name": "Algebreee",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Structure de machine",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Physique",
-            "link": "https://drive.physics.ex"
-          }
-        ]
-      },
-      {
-        "semesterName": "Semestre2",
-        "year": "1 year",
-        "field": "ING",
-        "subjects": [
-          {
-            "name": "Algorithme et structure de donnee 2",
-            "link": "https://drive.algo.ex"
-          },
-          {
-            "name": "Analyse 2",
-            "link": "https://drive.math.ex"
-          },
-          {
-            "name": "Algebre 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Structure de machine 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Physique 2",
-            "link": "https://drive.physics.ex"
-          }
-        ]
-      },
-      {
-        "semesterName": "Semestre1",
-        "year": "2 year",
-        "field": "SI",
-        "subjects": [
-          {
-            "name": "Algorithme et structure de donnee 2",
-            "link": "https://drive.algo.ex"
-          },
-          {
-            "name": "Analyse 2",
-            "link": "https://drive.math.ex"
-          },
-          {
-            "name": "Algebre 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Structure de machine 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Physique 2",
-            "link": "https://drive.physics.ex"
-          }
-        ]
-      },
-      {
-        "semesterName": "Semestre1",
-        "year": "2 year",
-        "field": "ISIL",
-        "subjects": [
-          {
-            "name": "Algorithme et structure de donnee 2",
-            "link": "https://drive.algo.ex"
-          },
-          {
-            "name": "Analyse 2",
-            "link": "https://drive.math.ex"
-          },
-          {
-            "name": "Algebre 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Structure de machine 2",
-            "link": "https://drive.physics.ex"
-          },
-          {
-            "name": "Physique 2",
-            "link": "https://drive.physics.ex"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "years": [
+    {
+      "year": "1 year",
+      "specialities": [
+        {
+          "speciality": "LMD",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 1",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Analyse 1",
+                  "link": "https://drive.math.ex"
+                },
+                {
+                  "name": "Structure machine 1",
+                  "link": "https://drive.intro.prog.ex"
+                },
+                {
+                  "name": "Algebre 1 ",
+                  "link": "https://drive.math.cs.ex"
+                },
+                {
+                  "name": "Physique 1",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Anglais 1",
+                  "link": "https://drive.math.ex"
+                }
+              ]
+            },
+            {
+              "semesterName": "Semestre2",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 2",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Analyse 2",
+                  "link": "https://drive.math.ex"
+                },
+                {
+                  "name": "Structure machine 2",
+                  "link": "https://drive.intro.prog.ex"
+                },
+                {
+                  "name": "Algebre 2 ",
+                  "link": "https://drive.math.cs.ex"
+                },
+                {
+                  "name": "Physique 2",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "OPM",
+                  "link": "https://drive.math.ex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speciality": "ING",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 1",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Analyse 1",
+                  "link": "https://drive.math.ex"
+                },
+                {
+                  "name": "Structure machine 1",
+                  "link": "https://drive.intro.prog.ex"
+                },
+                {
+                  "name": "Algebre 1 ",
+                  "link": "https://drive.math.cs.ex"
+                },
+                {
+                  "name": "Physique 1",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "OPM",
+                  "link": "https://drive.math.ex"
+                }
+              ]
+            },
+            {
+              "semesterName": "Semestre 2",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 2",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Analyse 2",
+                  "link": "https://drive.math.ex"
+                },
+                {
+                  "name": "Structure machine 2",
+                  "link": "https://drive.intro.prog.ex"
+                },
+                {
+                  "name": "Algebre 2 ",
+                  "link": "https://drive.math.cs.ex"
+                },
+                {
+                  "name": "Physique 2",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "OPM",
+                  "link": "https://drive.math.ex"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "2 year",
+      "specialities": [
+        {
+          "speciality": "LMD",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 3",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "logique mathematique",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "methode numerique",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "theorie des graphes",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "Anglais",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "architecture des ordinateurs",
+                  "link": "https://drive.cloud.comp.ex"
+                }          
+               ]
+            },
+            {
+              "semesterName": "Semestre2",
+              "subjects": [
+                {
+                  "name": "Bases de donnees",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "development web",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "reseaux",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "programmation orientee objet",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "systeme d'exploitation ",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "theorie des languages",
+                  "link": "https://drive.cloud.comp.ex"
+                }    
+              ]
+            }
+          ]
+        },
+        {
+          "speciality": "ING",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Algorithme et structure de donnee 3",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "logique mathematique",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "methode numerique",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "theorie des graphes",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "Anglais",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "architecture des ordinateurs",
+                  "link": "https://drive.cloud.comp.ex"
+                }          
+               ]
+            },
+            {
+              "semesterName": "Semestre2",
+              "subjects": [
+                {
+                  "name": "Bases de donnees",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "development web",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "reseaux",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "programmation orientee objet",
+                  "link": "https://drive.cloud.comp.ex"
+                },
+                {
+                  "name": "systeme d'exploitation ",
+                  "link": "https://drive.net.sec.ex"
+                },
+                {
+                  "name": "theorie des languages",
+                  "link": "https://drive.cloud.comp.ex"
+                }    
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": "3 year",
+      "specialities": [
+        {
+          "speciality": "SI",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Compilation",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Genie logiciel",
+                  "link": "https://drive.web.dev.ex"
+                },
+                {
+                  "name": "interface homme machine",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "proba state ",
+                  "link": "https://drive.web.dev.ex"
+                },{
+                  "name": "programmation lineare",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "systeme d'exploitation 2",
+                  "link": "https://drive.web.dev.ex"
+                },
+                {
+                  "name": "economie numerique",
+                  "link": "https://drive.algo.ex"
+                }
+              ]
+            },
+            {
+              "semesterName": "Semestre2",
+              "subjects": [
+                {
+                  "name": "donnee semi structure ",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "Artificial Intelligence",
+                  "link": "https://drive.web.dev.ex"
+                },
+                {
+                  "name": "development mobile",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "securite informatique ",
+                  "link": "https://drive.web.dev.ex"
+                },{
+                  "name": "redaction scientifique",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "creer et developer une startup",
+                  "link": "https://drive.web.dev.ex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "speciality": "ISIL",
+          "semesters": [
+            {
+              "semesterName": "Semestre1",
+              "subjects": [
+                {
+                  "name": "Genie logiciel",
+                  "link": "https://drive.web.dev.ex"
+                },
+                {
+                  "name": "programmation lineare",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "systeme d'exploitation 2",
+                  "link": "https://drive.web.dev.ex"
+                },
+                {
+                  "name": "economie numerique",
+                  "link": "https://drive.algo.ex"
+                }
+              ]
+            },
+            {
+              "semesterName": "Semestre2",
+              "subjects": [
+                {
+                  "name": "donnee semi structure ",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "securite informatique ",
+                  "link": "https://drive.web.dev.ex"
+                },{
+                  "name": "redaction scientifique",
+                  "link": "https://drive.algo.ex"
+                },
+                {
+                  "name": "creer et developer une startup",
+                  "link": "https://drive.web.dev.ex"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

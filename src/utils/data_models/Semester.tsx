@@ -1,4 +1,3 @@
-// utils/data_models/Semester.ts
 import Subject from "./Subject";
 
 export default class Semester {

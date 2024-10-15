@@ -1,59 +1,115 @@
-.SemesterSection {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+.semester-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  background-color: #f9f9f9; 
+  padding: 20px; 
+}
+
+.year-title {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+  color: #333; 
+  text-align: center; 
+}
+
+.speciality-selection {
+  display: flex;
+  gap: 10px; 
+  margin-bottom: 20px; 
+}
+
+.speciality-button {
+  padding: 10px 15px; 
+  border: none; 
+  border-radius: 5px; 
+  background-color: #007bff; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
+  font-size: 1rem; 
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); 
+}
+
+.speciality-button:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05); 
+}
+
+
+.speciality-button.selected {
+  background-color: #0056b3; 
+  font-weight: bold; 
+}
+
+.slider {
+  width: 100%;
+  margin: 20px 0; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.iconimg {
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.2s; 
+}
+
+.iconimg:hover {
+  transform: scale(1.1); 
+}
+
+.iconimg.inactive {
+  opacity: 0.5; 
+  cursor: not-allowed; 
+}
+
+.iconimg:hover {
+  transform: scale(1.1); 
+}
+
+.SubjectsCardWrapper {
+  width: 100%;
+  max-width: 35rem; 
+  overflow: hidden; 
+  position: relative; 
+  transition: opacity 0.5s; 
+}
+
+.SubjectsCardWrapper.animate-in {
+  animation: slideIn 0.5s ease-in-out; 
+}
+
+.SubjectsCardWrapper.animate-out {
+  animation: slideOut 0.5s ease-in-out; 
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .slider {
-    width: 100%;
-    height: 80vh;
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .iconimg {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .SubjectsCardWrapper {
-    width: 100%;
-    max-width: 35rem;
-    overflow: hidden;
-    position: relative;
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .SubjectsCardWrapper.animate {
-    animation: slideIn 0.5s ease-in-out;
-  }
-  
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  .SubjectsCardWrapper.animate-out {
-    animation: slideOut 0.5s ease-in-out;
-  }
-  
-  @keyframes slideOut {
-    0% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-  }
-    
+}

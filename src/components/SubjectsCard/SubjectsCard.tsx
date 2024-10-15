@@ -10,14 +10,13 @@ interface SubjectsCardProps {
 const SubjectsCard: React.FC<SubjectsCardProps> = ({ semester }) => {
   return (
     <div className="SubjectsCardContainer">
-      <h3 className="SemesterYear">{semester.year}</h3> 
       <h2 className="SemesterName">{semester.title}</h2>
       <div className="SubjectsCard animate">
         <div className="SubjectsCardContent">
           <ul>
             {semester.subjects.map((subject, index) => (
               <li key={index}>
-                <a href={subject.url} target="_blank" rel="noopener noreferrer">
+                <a href={subject.link} target="_blank" rel="noopener noreferrer">
                   <FaFileLines className="icon" />
                   {subject.name}
                 </a>
