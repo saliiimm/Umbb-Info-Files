@@ -1,0 +1,103 @@
+.semester-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  background-color: #f9f9f9; 
+  padding: 20px; 
+}
+
+.year-title {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+  color: #239ce7; 
+  text-align: center; 
+}
+
+.speciality-selection {
+  display: flex;
+  gap: 30px; 
+}
+
+.speciality-button {
+  border: none; 
+  background: none; 
+  color: black; 
+  cursor: pointer; 
+  font-size: 1.25rem; 
+  text-decoration: none; 
+  transition: text-decoration 0.2s, color 0.2s; 
+}
+
+.speciality-button.selected {
+  text-decoration: underline; 
+  font-weight: bold;
+  color: #0056b3; 
+}
+
+.slider {
+  width: 100%;
+ 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.iconimg {
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.2s; 
+}
+
+.iconimg:hover {
+  transform: scale(1.1); 
+}
+
+.iconimg.inactive {
+  opacity: 0.5; 
+  cursor: not-allowed; 
+}
+
+.SubjectsCardWrapper {
+  width: 100%;
+  max-width: 35rem; 
+  overflow: hidden; 
+  position: relative; 
+  transition: opacity 0.5s; 
+}
+
+.SubjectsCardWrapper.animate-in {
+  animation: slideIn 0.5s ease-in-out; 
+}
+
+.SubjectsCardWrapper.animate-out {
+  animation: slideOut 0.5s ease-in-out; 
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
