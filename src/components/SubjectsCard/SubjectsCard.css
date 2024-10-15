@@ -1,37 +1,87 @@
 .SubjectsCardContainer {
-    width: 100%;
+    width: 90%;
     max-width: 35rem;
-    height: 100vh;
-
+    height: auto;
     margin: 25px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-
-.SemesterName{
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-in-out;
+  }
+  
+  .SemesterName {
     margin: 20px;
-}
-
-
-.SubjectsCard{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .SubjectsCard {
     width: 100%;
+    max-height: 25em; 
     padding: 20px;
-
     background-color: aliceblue;
-    
-    border: solid;
     border-radius: 20px;
-    border-color: blue;
-
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.115);
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
+    justify-content: flex-start; 
+    transition: box-shadow 0.3s ease; 
+    overflow: hidden; 
+  }
+  
+  .SubjectsCardContent {
+    max-height: 20em; 
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .SubjectsCard:hover {
+    box-shadow: 0px 0px 20px 5px rgba(91, 138, 225, 0.265); 
+  }
+  
+  .SubjectsCard ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .SubjectsCard li {
+    margin: 20px 0;    
+  }
+  
+  .SubjectsCard a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center; 
+    
+  }
+  
+  .SubjectsCard .icon {
+    color: #2688d3;
+    font-size: 33px;
+    margin-right: 2%;
+  }
+  
+  .SubjectsCard a:hover {
+    text-decoration: underline;
+    color: darkblue;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

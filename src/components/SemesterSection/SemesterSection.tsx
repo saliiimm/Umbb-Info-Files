@@ -1,27 +1,55 @@
-import "./SemesterSection.css"
-import SubjectsCard from "../../components/SubjectsCard/SubjectsCard";
-import Subject from "../../utils/data_models/Subject";
-import Semester from "../../utils/data_models/Semester";
 import { useState } from "react";
+import SubjectsCard from "../../components/SubjectsCard/SubjectsCard";
+import Semester from "../../utils/data_models/Semester";
+import "./SemesterSection.css";
+import Subject from "../../utils/data_models/Subject";
+import subjectsData from "../../utils/data_models/subjectsData.json";
 
 const SemesterSection = () => {
-  ////TODO : REPLACE THIS 
-  const data= [new Subject("Algo","https://drive.algo.ex"),new Subject("Algo","https://drive.algo.ex"),new Subject("Algo","https://drive.algo.ex")
-    ,new Subject("Algo","https://drive.algo.ex"),new Subject("Algo","https://drive.algo.ex"),new Subject("Algo","https://drive.algo.ex")
-  ];
+  const semesters = subjectsData.semesters.map((sem) => {
+    const subjects = sem.subjects.map(
+      (sub) => new Subject(sub.name, sub.link)
+    );
+    return new Semester(sem.semesterName, subjects, sem.year); 
+  });
 
-  const semester = new Semester("S1",data);
-  const semester2 = new Semester("S2",data);
-  /*/*/
-  
-  const semesters = [semester,semester2]
-  var [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleNext = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % semesters.length);
+      setIsAnimating(false);
+    }, 500);
+  };
+
+  const handlePrev = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIndex((prevIndex) => (prevIndex - 1 + semesters.length) % semesters.length);
+      setIsAnimating(false);
+    }, 500);
+  };
+
   return (
     <section className="SemesterSection">
-      <div  className="slider">
-          <img src="src/assets/prev.svg" onClick={()=>setIndex(index > 0 ? --index : semesters.length - 1) }/>
-          <SubjectsCard semester={semesters[index]} />
-          <img src="src/assets/next.svg" onClick={()=>setIndex(index++ % (semesters.length))}/>
+      <div className="slider">
+        <img
+          className="iconimg"
+          src="src/assets/prev.svg"
+          onClick={handlePrev}
+          alt="Previous"
+        />
+        <div className={`SubjectsCardWrapper ${isAnimating ? "animate" : ""}`}>
+          <SubjectsCard semester={semesters[index]} /> 
+        </div>
+        <img
+          className="iconimg"
+          src="src/assets/next.svg"
+          onClick={handleNext}
+          alt="Next"
+        />
       </div>
     </section>
   );

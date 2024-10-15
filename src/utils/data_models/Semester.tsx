@@ -1,11 +1,14 @@
+// utils/data_models/Semester.ts
 import Subject from "./Subject";
 
 export default class Semester {
-    name: string;
-    subjectsList: Array<Subject>;
+  title: string;
+  subjects: Subject[];
+  year:string;
 
-    constructor(semesterName: string, subjectsList: Array<Subject>) {
-        this.name = semesterName;
-        this.subjectsList = subjectsList;
-    }
+  constructor(title: string, subjects: Subject[], year:string) {
+    this.title = title;
+    this.subjects = subjects;
+    this.year = year;
+  }
 }

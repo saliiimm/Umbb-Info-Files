@@ -1,18 +1,33 @@
-import './SubjectsCard.css';
-import { FC } from "react";
-import SemesterInterface from "../../utils/data_models/SemesterInterface";
-import SubjectCardElement from "../SubjectCardElement/SubjectCardElement";
+import React from "react";
+import Semester from "../../utils/data_models/Semester";
+import "./SubjectsCard.css";
+import { FaFileLines } from "react-icons/fa6";
 
-
-const SubjectsCard: FC<SemesterInterface> = ({semester})=>{
-    return (
-        <div className='SubjectsCardContainer'>
-            <h3 className='SemesterName'>{semester.name}</h3>
-            <ul className='SubjectsCard'>
-                {semester.subjectsList.map( subject => (<SubjectCardElement subject={subject} />))}
-            </ul>
-        </div>
-    )
+interface SubjectsCardProps {
+  semester: Semester;
 }
 
-export default SubjectsCard
+const SubjectsCard: React.FC<SubjectsCardProps> = ({ semester }) => {
+  return (
+    <div className="SubjectsCardContainer">
+      <h3 className="SemesterYear">{semester.year}</h3> 
+      <h2 className="SemesterName">{semester.title}</h2>
+      <div className="SubjectsCard animate">
+        <div className="SubjectsCardContent">
+          <ul>
+            {semester.subjects.map((subject, index) => (
+              <li key={index}>
+                <a href={subject.url} target="_blank" rel="noopener noreferrer">
+                  <FaFileLines className="icon" />
+                  {subject.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SubjectsCard;

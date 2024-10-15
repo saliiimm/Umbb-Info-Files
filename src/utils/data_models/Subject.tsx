@@ -1,4 +1,5 @@
 export default class Subject {
+    [x: string]: string | undefined;
     name: string;
     link: string;
 
