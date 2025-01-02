@@ -1,0 +1,14 @@
+# Allow all user agents to access the site
+User-agent: *
+# Disallow access to sensitive or development sections
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /private/
+Disallow: /temp/
+# Allow all other content
+Allow: /
+# Crawl-delay to prevent excessive crawling (optional, specify seconds)
+Crawl-delay: 10
+# Sitemap for better indexing
+Sitemap: https://www.s-and-search.com/sitemap.xml
