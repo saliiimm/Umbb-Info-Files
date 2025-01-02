@@ -15,3 +15,12 @@ footer p a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+footer p {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  footer p {
+    font-size: 10px;
+  }
+}
