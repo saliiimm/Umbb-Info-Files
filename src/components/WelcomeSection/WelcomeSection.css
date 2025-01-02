@@ -1,115 +1,50 @@
 .welcome-section {
-  position: relative;
   width: 100%;
-  height: 80dvh;
+  height: 100dvh;
   padding-top: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .welcome-section h2 {
   font-size: 48px;
   color: #333;
   font-family: 'Ubuntu';
-  text-align: center;
-  position: relative;
+  text-align: left;
 }
 
-.welcome-section h2 img.blue {
-  position: absolute;
-  width: 170px;
-  top: -140px;
-  right: -140px;
-}
-
-.welcome-section h2 img.yellow {
-  position: absolute;
-  width: 170px;
-  bottom: -200px;
-  left: -150px;
-}
 .welcome-section h3 {
   font-size: 20px;
   color: #999;
   font-family: 'Poppins';
-  text-align: center;
+  text-align: left;
 }
 
-.floating-icon {
-  position: absolute;
-  font-size: 50px;
-  opacity: 0.8;
-  animation: float 10s ease-in-out infinite;
-  color: #555;
+.welcome-section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
-.html-icon {
-  top: 30%;
-  left: 20%;
-  animation-delay: 0s;
-  color: #e34f26;
-}
-.css-icon {
-  top: 33%;
-  right: 50%;
-  animation-delay: 1s;
-  color: #264de4;
-}
-.js-icon {
-  bottom: 20%;
-  left: 35%;
-  animation-delay: 2s;
-  color: #f0db4f;
-}
-.java-icon {
-  top: 26%;
-  left: 60%;
-  animation-delay: 3s;
-  color: #007396;
-}
-.php-icon {
-  bottom: 25%;
-  right: 27%;
-  animation-delay: 4s;
-  color: #8993be;
-}
-.python-icon {
-  top: 70%;
-  left: 45%;
-  animation-delay: 5s;
-  color: #306998;
-}
-.c-icon {
-  bottom: 40%;
-  left: 15%;
-  animation-delay: 6s;
-  color: #a8b9cc;
-}
-.cpp-icon {
-  top: 35%;
-  right: 60%;
-  animation-delay: 7s;
-  color: #00599c;
-}
-.sql-icon {
-  bottom: 10%;
-  right: 40%;
-  animation-delay: 8s;
-  color: #f29111;
-}
-
-/* Floating Animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+@media screen and (max-width: 500px) {
+  .welcome-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
-  50% {
-    transform: translateY(-20px);
+  .welcome-section > div:nth-child(2) {
+    order: -1;
+    padding: 0;
   }
-  100% {
-    transform: translateY(0px);
+  .welcome-section h3,
+  .welcome-section h2 {
+    text-align: center;
+  }
+  .welcome-section h2 {
+    font-size: 35px;
+  }
+  .welcome-section h3 {
+    font-size: 15px;
   }
 }

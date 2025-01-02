@@ -1,82 +1,56 @@
 import './NavBar.css';
 import { Button } from 'antd';
 import { MdNoteAdd } from 'react-icons/md';
-import { Dropdown, MenuProps, Space } from 'antd';
-
-// Dropdown menu items for each year
-const firstYearItems: MenuProps['items'] = [
-  { key: '1', label: <a href="#">1st Semester</a> },
-  { key: '2', label: <a href="#">2nd Semester</a> },
-];
-
-const secondYearItems: MenuProps['items'] = [
-  { key: '1', label: <a href="#">3rd Semester</a> },
-  { key: '2', label: <a href="#">4th Semester</a> },
-];
-
-const thirdYearItems: MenuProps['items'] = [
-  { key: '1', label: <a href="#">5th Semester</a> },
-  { key: '2', label: <a href="#">6th Semester</a> },
-  { key: '3', label: <a href="#">PFE</a> }, // Project for the end of studies (PFE)
-];
-
-const m1Items: MenuProps['items'] = [
-  { key: '1', label: <a href="#">1st Semester</a> },
-  { key: '2', label: <a href="#">2nd Semester</a> },
-];
-
-const m2Items: MenuProps['items'] = [
-  { key: '1', label: <a href="#">3rd Semester</a> },
-  { key: '2', label: <a href="#">PFE</a> },
-];
-
+import { HashLink } from 'react-router-hash-link';
 const NavBar = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const scrollWithOffset = (el: any) => {
+    const yOffset = -70;
+    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
   return (
     <nav>
-      <h1>UMBB Info Files</h1>
+      <HashLink to="/#home" scroll={scrollWithOffset}>
+        <h1>UMBB Info Files</h1>
+      </HashLink>
       <ul>
         <li>
-          <Dropdown menu={{ items: firstYearItems }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>1st Year</Space>
-            </a>
-          </Dropdown>
+          <HashLink to="/#1st-year" scroll={scrollWithOffset}>
+            1st Year
+          </HashLink>
         </li>
 
         <li>
-          <Dropdown menu={{ items: secondYearItems }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>2nd Year</Space>
-            </a>
-          </Dropdown>
+          <HashLink to="/#2nd-year" scroll={scrollWithOffset}>
+            2nd Year
+          </HashLink>
         </li>
 
         <li>
-          <Dropdown menu={{ items: thirdYearItems }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>3rd Year</Space>
-            </a>
-          </Dropdown>
+          <HashLink to="/#3rd-year" scroll={scrollWithOffset}>
+            3rd Year
+          </HashLink>
         </li>
 
         <li>
-          <Dropdown menu={{ items: m1Items }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>M1</Space>
-            </a>
-          </Dropdown>
+          <HashLink to="/#4th-year" scroll={scrollWithOffset}>
+            4th Year
+          </HashLink>
         </li>
 
         <li>
-          <Dropdown menu={{ items: m2Items }}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>M2</Space>
-            </a>
-          </Dropdown>
+          <HashLink to="/#5th-year" scroll={scrollWithOffset}>
+            5th Year
+          </HashLink>
         </li>
       </ul>
-
-      <Button type="primary" icon={<MdNoteAdd size={18} />}>
+      <Button
+        type="primary"
+        icon={<MdNoteAdd size={18} />}
+        disabled
+        title="soon available"
+      >
         Contribute
       </Button>
     </nav>
